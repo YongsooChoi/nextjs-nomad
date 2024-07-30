@@ -1,10 +1,12 @@
-const URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
+import Link from "next/link";
+
+export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
 // https://nomad-movies.nomadcoders.workers.dev/movies/753342
 
 async function fetchMovies() {
   console.log("it's about to fetch...");
-  await new Promise((resolve) => setTimeout(resolve, 5000));
-  const response = await fetch(URL);
+  // await new Promise((resolve) => setTimeout(resolve, 5000));
+  const response = await fetch(API_URL);
   const json = await response.json();
 
   return json;
@@ -39,5 +41,13 @@ export const metadata = {
 export default async function HomePage() {
   const movies = await fetchMovies();
 
-  return <div>{JSON.stringify(movies)}</div>;
+  return (
+    <ul>
+      {movies.map((movie) => (
+        <li key={movie.id}>
+          <Link href={"/movies/" + movie.id}>{movie.title}</Link>
+        </li>
+      ))}
+    </ul>
+  );
 }
