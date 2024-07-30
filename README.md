@@ -1,3 +1,18 @@
+# Next13 이후에 바뀐 점
+
+- pages 라우터의 구조상의 문제로 개선할 수 없던 부분을 해결하기 위해 app router 등장!
+- app router에서는 directory 기능이 달라짐
+- pages router layout 기능이 없었다?
+- pages router 권한 체크 어려움
+- app router, react v18에서 등장한 server component 개념 사용 가능
+- server component의 경우 next server에서 처리하기 때문에 서버에 부담이 되며, 이 때문에 서버에 캐싱 적용
+
+- 클론 코딩을 하더라도 왜? 를 생각하며 하기
+
+* 다음에 패러렐 라우트부터 들어야 함
+* 다음에 인터셉팅 라우트 이후부터 들어야 함 5/29
+* 다음에 seSelectedLayoutSegment로 ActiveLink 만들기 이후부터 들어야 함 6/12
+
 # 라이브러리와 프레임워크의 차이
 
 라이브러리는 사용자가 선택적으로 사용한다.
@@ -66,4 +81,12 @@ boring HTML -> init(boring HTML) (to interact by loading framework), onClick이 
 
 # parallel request
 
--
+- await Promise.all()
+
+# Suspense
+
+# error.tsx
+
+# style
+
+#
