@@ -1,0 +1,10 @@
+.nav {
+  background-color: cyan;
+}
+.nav ul {
+  display: flex;
+
+  .list-item {
+    margin-right: 100px;
+  }
+}
